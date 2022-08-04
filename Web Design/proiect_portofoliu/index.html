@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+<meta charset="utf-8"> 
+<meta content="width=device-width, intial-scale=1.0" name="viewport">
+<title>Portofolio Website</title>
+<!--stylesheet-->
+<link rel="stylesheet" type="text/css" href="styles.css">	
+</head>
+<body>
+<!--navigation-bar-->
+<nav class="navbar">
+    <div class="navbar_container" id="page-menu">
+        <a class="navbar_logo" id="navbar_logo" href="index.html">
+            <strong>DANCI DENISA</strong>
+        </a>
+        <ul class="navbar_menu">
+            <li class="navbar_item">
+                <a href="#about" class="navbar_links" id="about-page">ABOUT</a>
+            </li>
+            <li class="navbar_item">
+                <a href="#portofolio" class="navbar_links" id="portofolio-page">PORTOFOLIO</a>
+            </li>
+            <li class="navbar_item">
+                <a href="#contact" class="navbar_links" id="contact-page">CONTACT</a>
+            </li>
+        </ul>   
+    </div>
+</nav>
+
+<!--about section-->
+<section class="about" id="about">
+    <div class="about_container">
+        <div class="about_content">
+            <h1>Danci Denisa</h1>
+            <h2>FSEGA</h2>
+            <p>Informatica Economica</p>
+            <p>Cluj-Napoca</p>
+            <p>denisadanci00@gmail.com</p>
+            <button class="cv_btn">
+                <a href="cv.pdf">CV</a>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!--portofolio section-->
+<section class="portofolio" id="portofolio">
+    <div class="portofolio_container">
+        <h1>My work</h1>
+        <div class="portofolio_wrapper">
+            <div class="portofolio_card">
+                <h2>Database <a class="portofolio_links" href="bde.pdf"><button class="portofolio_btn">Get</button></a></h2>
+            </div>
+            <div class="portofolio_card">
+                <h2>BT Internship <a class="portofolio_links" href="bt.pdf"><button class="portofolio_btn">Get</button></a></h2>
+            </div>
+            <div class="portofolio_card">
+                <h2>Softex Company Internship <a class="portofolio_links" href="softex.pdf"><button class="portofolio_btn">Get</button></a></h2>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+<!--contact section-->
+<section class="contact" id="contact">
+    <!--form-->
+    <div class="contact_container">
+        <form id="contact-form">
+            <!--full-name-->
+            <input type="text" name="name" placeholder="Full Name" required>
+            <!--email-->
+            <input type="email" name="email" placeholder="Example@gmail.com" required>
+            <!--write-something-->
+            <textarea name="message" placeholder="Write Something...." required></textarea>
+            <!--send-btn-->
+            <input type="submit" value="Send">
+        </form>
+    </div>
+</section>
+
+
+</body>
+</html>
