@@ -1,0 +1,181 @@
+@prefix : <http://hosu-danci.ro#/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#/>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#/>.
+@prefix s: <http://schema.org#/>.
+@prefix dbr: <http://dbpedia.org/resource/>.
+@prefix dbo: <http://dbpedia.org/ontology/>.
+
+:Alexandra a :Client;
+    rdfs:label "Alexandra Popescu";
+    :hasGender :Woman;
+    :hasAge 25;
+    :hasKg :70kg;
+    :hasBirthPlace dbr:Cluj-Napoca;
+    :hasClientID "ale123", "ale128";
+    :haveAttended dbr:Zumba;
+    :typeOfSubscription :Morning.
+
+:Andrei a :Client;
+    rdfs:label "Andrei Popa";
+    :hasGender :Man;
+    :hasAge 30;
+    :hasKg :95kg;
+    :hasBirthPlace dbr:Oradea;
+    :hasClientID "andreipopa";
+    :haveAttended :bodyART;
+    :typeOfSubscription :Flexible.
+
+:Maria a :Client;
+    rdfs:label "Maria Diaconu";
+    :hasGender :Woman;
+    :hasAge 23;
+    :hasKg :84kg;
+    :hasBirthPlace dbr:Arad;
+    :hasClientID "mariad";
+    :haveAttended :Cardio,
+        :TRX;
+    :typeOfSubscription :Student.
+
+:Andreea a :Client;
+    rdfs:label "Andreea Man";
+    :hasGender :Woman;
+    :hasAge 21;
+    :hasKg :76kg;
+    :hasBirthPlace dbr:Bucuresti;
+    :hasClientID "andreeaman";
+    :haveAttended :TRX;
+    :typeOfSubscription :Loyalty.
+
+:TRX a :Antrenament;
+    rdfs:label "Antrenament TRX";
+    :hasDificulty: "Hard";
+    :hasTrainer :Mara;
+    :isPlayedBy :Andreea.
+
+dbr:Zumba a :Antrenament;
+     rdfs:label "Antrenament Zumba";
+    :wasCreatedBy dbr:Alberto_Perlman;
+    :hasDificulty: "Medium";
+    :hasTrainer :Vlad;
+    :isPlayedBy :Alexandra.
+  
+:bodyART a :Antrenament;
+    rdfs:label "Antrenament bodyART";
+    :hasDificulty: "Medium";
+    :hasTrainer :Mircea;
+    :isPlayedBy :Andrei.
+
+:Cardio a :Antrenament;
+    rdfs:label "Antrenament Cardio";
+    :hasDificulty: "Hard";
+    :hasTrainer :Mara;
+    :isPlayedBy :Maria.
+
+:Mara a :Antrenor;
+    rdfs:label "Mara Pop";
+    :yearsOfExperience 10;
+    :hasRating 4;
+    :trainerOf :Cardio, :TRX.
+
+:Vlad a :Antrenor;
+    rdfs:label "Vlad Petre";
+    :yearsOfExperience 7;
+    :hasRating 5;
+    :trainerOf :Zumba.
+
+:Mircea a :Antrenor;
+    rdfs:label "Mircea Apetrei";
+    :yearsOfExperience 3;
+    :hasRating 3;
+    :trainerOf :bodyART.
+
+:Morning a :Abonament;
+    rdfs:label "Abonament Morning";
+    :price :70lei.
+
+:Flexible a :Abonament;
+    rdfs:label "Abonament Flexible";
+    :price :100lei.
+
+:Student a :Abonament;
+    rdfs:label "Abonament Student";
+    :price :85lei.
+
+:Loyalty a :Abonament;
+    rdfs:label "Abonament Loyalty";
+    :price :200lei.
+
+:Client a rdfs:Class;
+    rdfs:comment "Este un Client".
+
+:Antrenament a rdfs:Class;
+    rdfs:comment "Este un Antrenament".
+
+:Antrenor a rdfs:Class;
+    rdfs:comment "Este un Antrenor".
+
+:Abonament a rdfs:Class;
+    rdfs:comment "Este un Abonament".
+
+:hasGender a rdf:Property;
+    rdfs:comment "Reprezinta proprietatea care atribuie genul unui anumit Client";
+    rdfs:domain :Client;
+    rdfs:range :Gender.
+
+:hasAge a rdf:Property;
+    rdfs:comment "Reprezinta proprietatea care atribuie varsta unui anumit Client";
+    rdfs:domain :Client;
+    rdfs:range :Age.
+
+:hasKg a rdf:Property;
+    rdfs:comment "Reprezinta proprietatea care atribuie kilogramele unui anumit Client";
+    rdfs:domain :Client;
+    rdfs:range :Kg.
+
+:hasBirthPlace a rdf:Property;
+    rdfs:comment "Reprezinta proprietatea care atribuie locul nasterii unui anumit Client";
+    rdfs:domain :Client;
+    rdfs:range :BirthPlace.
+
+:hasClientID a rdf:Property;
+    rdfs:comment "Reprezinta proprietatea care atribuie un ClientID unic unui anumit Client";
+    rdfs:domain :Client;
+    rdfs:range :ClientID.
+
+:haveAttended a rdf:Property;
+    rdfs:comment "Reprezinta proprietatea care atribuie unui Client un anumit Antrenament la care acesta a participat";
+    rdfs:domain :Client;
+    rdfs:range :Antrenament.
+
+:typeOfSubscription a rdf:Property;
+    rdfs:comment "Reprezinta proprietatea care atribuie unui Client un anumit Abonament";
+    rdfs:domain :Client;
+    rdfs:range :Abonament.
+
+:hasDificulty rdfs:comment "Atribuie o nota unui anumit Antrenament";
+    rdfs:domain :Antrenament;
+    rdfs:range :Dificulty.
+
+:hasTrainer rdfs:comment "Atribuie un Trainer unui anumit Antrenament";
+    rdfs:domain :Antrenament;
+    rdfs:range :Trainer.
+
+:isPlayedBy rdfs:comment "Atribuie unui Client unui anumit Antrenament";
+    rdfs:domain :Antrenament;
+    rdfs:range :Client.
+
+:yearsOfExperience rdfs:comment "Atribuie anii de experienta unui Antrenor";
+    rdfs:domain :Antrenor;
+    rdfs:range :yearsOfExperience.
+
+:hasRating rdfs:comment "Atribuie rating-ul avut unui Antrenor";
+    rdfs:domain :Antrenor;
+    rdfs:range :Rating.
+
+:trainerOf rdfs:comment "Atribuie un Antrenament unui Antrenor";
+    rdfs:domain :Antrenor;
+    rdfs:range :Antrenament.
+
+:price rdfs:comment "Atribuie un pret unui Abonament";
+    rdfs:domain :Abonament;
+    rdfs:range :Price.
